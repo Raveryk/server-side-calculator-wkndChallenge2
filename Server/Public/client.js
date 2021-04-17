@@ -27,6 +27,11 @@ function Calculation() {
     }
 
     console.log(`You input: ${newNums.num1} ${newNums.operator} ${newNums.num2} `);
+
+   
+    if( newNums.num1 === undefined || newNums.num2 === undefined || newNums.operator === undefined)
+    alert('Please fill out all necessary inputs.');
+    
     
 
     //ajax POST method to send data to the server for calculation
@@ -42,6 +47,7 @@ function Calculation() {
     }) .catch( function( error ) {
         console.log('Error from the server', error);
         alert('Sorry, we could not process your numbers');
+        // alert('Please fill out all necessary inputs.');
         
     })
 }
