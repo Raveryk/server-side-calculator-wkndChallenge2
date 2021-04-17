@@ -28,11 +28,11 @@ function Calculation() {
 
     console.log(`You input: ${newNums.num1} ${newNums.operator} ${newNums.num2} `);
 
-   
-    if( newNums.num1 === undefined || newNums.num2 === undefined || newNums.operator === undefined)
-    alert('Please fill out all necessary inputs.');
-    
-    
+   //Conditional to only allow the POST call to happen if inputs have been filled.
+    if( newNums.num1 === '' || newNums.num2 === '' || newNums.operator === undefined) {
+    alert('Please fill out all necessary inputs.'); 
+    } else {
+
 
     //ajax POST method to send data to the server for calculation
     $.ajax({
@@ -50,6 +50,9 @@ function Calculation() {
         // alert('Please fill out all necessary inputs.');
         
     })
+    
+}
+
 }
 
 function clearInputs() {

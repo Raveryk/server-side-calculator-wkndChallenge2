@@ -22,20 +22,20 @@ app.post('/numbers', (req, res) => {
     console.log('Got new nums', newNums);
     // console.log(calcHistory);
    
-    if( newNums.num1 === '' || newNums.num2 === '' || newNums.operator === undefined) {
+//     if( newNums.num1 === '' || newNums.num2 === '' || newNums.operator === undefined) {
     
     
- } 
-    else {
+//  } 
+//     else {
 
     
     calcHistory.push(newNums);
 
     calcNewNums(calcHistory);
-    // console.log(calcHistory);
+    console.log(calcHistory);
     res.sendStatus(201);
 
-    }
+    // }
 })
 
 app.get('/numbers', (req, res) => {
