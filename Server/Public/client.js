@@ -96,10 +96,12 @@ function getCalc() {
 
 
 function appendToDom( calcHistory ) {
+    
     $('#history').empty();
 
     //Loop through the calcHistory
     for( let item of calcHistory ) {
+        $('#solution').empty().append(`<h2>${item.calc}</h2>`);
         $('#history').append(`<ul class="calc-list"><li>
         ${item.num1} ${item.operator} ${item.num2} = ${item.calc}
         </li></ul>`)

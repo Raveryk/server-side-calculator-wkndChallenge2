@@ -15,9 +15,6 @@ app.use( bodyParser.urlencoded( {extended: true} ) );
 
 let calcHistory = [];
 
-app.get('/numbers', (req, res) => {
-    res.send(calcHistory)
-})
 
 
 app.post('/numbers', (req, res) => {
@@ -31,6 +28,10 @@ app.post('/numbers', (req, res) => {
     // console.log(calcHistory);
     res.sendStatus(201);
     
+})
+
+app.get('/numbers', (req, res) => {
+    res.send(calcHistory)
 })
 
 
