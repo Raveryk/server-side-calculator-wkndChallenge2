@@ -17,8 +17,12 @@ function Calculation() {
 
     let newNums = {
         num1: $('#num-one').val(),
-        num2: $('#num-two').val()
+        num2: $('#num-two').val(),
+        operator: $('.operator'.val())
     }
+
+    console.log(`You input: ${newNums.num1} ${newNums.operator} ${newNums.num2} `);
+    
 
     //ajax POST method to send data to the server for calculation
     $.ajax({
@@ -28,7 +32,7 @@ function Calculation() {
     }) .then( function( response )  {
         console.log('Adding Nums');
 
-        getNums();
+        // getNums();
     }) .catch( function( error ) {
         console.log('Error from the server', error);
         alert('Sorry, we could not process your numbers');

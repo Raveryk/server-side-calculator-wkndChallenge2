@@ -11,6 +11,19 @@ app.use( express.static( 'Server/Public') );
 const bodyParser = require('body-parser');
 app.use( bodyParser.urlencoded( {extended: true} ) );
 
+//Source of truth
+
+let calcHistory = [];
+
+app.post('/numbers', (req, res) => {
+    let newNums = req.body;
+    console.log('Got new nums', newNums);
+
+    calcHistory.push(newNums);
+    res.sendStatus(201);
+    
+})
+
 
 
 // set up PORT
