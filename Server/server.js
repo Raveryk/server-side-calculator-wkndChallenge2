@@ -20,13 +20,7 @@ let calcHistory = [];
 app.post('/numbers', (req, res) => {
     let newNums = req.body;
     console.log('Got new nums', newNums);
-    // console.log(calcHistory);
-   
-//     if( newNums.num1 === '' || newNums.num2 === '' || newNums.operator === undefined) {
     
-    
-//  } 
-//     else {
 
     
     calcHistory.push(newNums);
@@ -35,7 +29,6 @@ app.post('/numbers', (req, res) => {
     console.log(calcHistory);
     res.sendStatus(201);
 
-    // }
 })
 
 app.get('/numbers', (req, res) => {

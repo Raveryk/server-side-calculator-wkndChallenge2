@@ -29,8 +29,10 @@ function Calculation() {
     console.log(`You input: ${newNums.num1} ${newNums.operator} ${newNums.num2} `);
 
    //Conditional to only allow the POST call to happen if inputs have been filled.
-    if( newNums.num1 === '' || newNums.num2 === '' || newNums.operator === undefined) {
+    if( newNums.num1 === '' || newNums.num2 === '' ) {
     alert('Please fill out all necessary inputs.'); 
+    } else if ( newNums.operator === undefined ) {
+    alert('Please select on operator.') 
     } else {
 
 
