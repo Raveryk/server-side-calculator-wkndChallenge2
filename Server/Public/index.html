@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="vendors/jquery-3.6.0.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="Vendors/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <title>Server-Side-Calculator</title>
 </head>
 <body>
-    <header><h1>CALCULATOR</h1></header>
+    <header><h1><span id ="title">CALCULATOR</span></h1></header>
     <section id="inputs">
         <input id="num-one" type="number" placeholder="Number One">
         <button id="add-btn" class="operator" type="submit">+</button>
@@ -18,10 +19,10 @@
         <button id="multiply-btn" class="operator" type="submit">*</button>
         <button id="divide-btn" class="operator" type="submit">/</button>
         <input id="num-two" type="number" placeholder="Number Two">
-        <button id="submit-btn" type="submit">=</button>
-        <button id="clear-btn" type="submit">Clear</button>
+        <button id="submit-btn" class="operator" type="submit">=</button>
+        <button id="clear-btn" class="operator" type="submit">Clear</button>
     </section>
-    <section><h2>Solution:<span id="solution"></span></h2></section>
+    <section id="solution-title"><h2>Solution:<span id="solution"></span></h2></section>
     <section id="history">
         
     </section>

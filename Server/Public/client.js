@@ -52,25 +52,25 @@ function clearInputs() {
 }
 
 function addNums() {
-    console.log('You added something')
+    console.log('You are adding something')
     let plus = $('#add-btn').text();
     opType.push(plus);
 }
 
 function subNums() {
-    console.log('You subtracted something');
+    console.log('You are subtracting something');
     let minus = $('#minus-btn').text();
     opType.push(minus);
 }
 
 function multiplyNums() {
-    console.log('You multiplied something');
+    console.log('You are multiplying something');
     let mult = $('#multiply-btn').text();
     opType.push(mult);
 }
 
 function divideNums() {
-    console.log('You divided something');
+    console.log('You are dividing something');
     let div = $('#divide-btn').text();
     opType.push(div);
 }
@@ -101,9 +101,9 @@ function appendToDom( calcHistory ) {
 
     //Loop through the calcHistory
     for( let item of calcHistory ) {
-        $('#solution').empty().append(`<h2>${item.calc}</h2>`);
+        $('#solution').empty().append(` ${item.calc} `).css('color', 'green');
         $('#history').append(`<ul class="calc-list"><li>
         ${item.num1} ${item.operator} ${item.num2} = ${item.calc}
-        </li></ul>`)
+        </li></ul>`).css('color', 'blue')
     }
 } //end appendToDom
