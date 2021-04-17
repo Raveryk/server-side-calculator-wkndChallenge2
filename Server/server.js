@@ -15,13 +15,43 @@ app.use( bodyParser.urlencoded( {extended: true} ) );
 
 let calcHistory = [];
 
+
 app.post('/numbers', (req, res) => {
     let newNums = req.body;
     console.log('Got new nums', newNums);
+   
 
     calcHistory.push(newNums);
+
+    calcNewNums(calcHistory);
+    // console.log(calcHistory);
     res.sendStatus(201);
     
+})
+
+
+// Setting up logic for calculations
+function calcNewNums() {
+    for ( let item of calcHistory ) {
+        if( item.operator == '+' ) {
+        item.calc = Number(item.num1) + Number(item.num2);
+        }
+        if( item.operator == '-' ) {
+        item.calc = Number(item.num1) - Number(item.num2);
+        }
+        if( item.operator == '*' ) {
+        item.calc = Number(item.num1) * Number(item.num2);
+        }
+        if( item.operator == '/' ) {
+        item.calc = Number(item.num1) / Number(item.num2);
+        }
+
+    }
+    // console.log(calcHistory);
+}
+
+app.get('/numbers', (req, res) => {
+    res.send(calcHistory)
 })
 
 
