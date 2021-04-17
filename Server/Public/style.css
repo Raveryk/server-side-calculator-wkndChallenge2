@@ -15,23 +15,38 @@ header {
     margin-top: 3%;
 }
 
-#solution {
-    margin-top: 15%;
+#solution, #solution-title{
+    margin-top: 5%;
+    text-align: center;
+    
     
 }
 
-/* #solution-title {
-    border: 4px solid black;
-    margin-right: 80%;
-    margin-left: 5%;
-} */
+#solution-title {
+    margin-bottom: 2%;
+}
 
 #inputs {
+    text-align: center;
     margin-top: 10%;
     margin-bottom: 4%;
 }
 
 .operator  {
     background-color: wheat;
+}
+
+#history-title, #history, .calc-list {
+    text-align: center;
+ 
+}
+
+#history-title {
+    margin-bottom: 2%;
+}
+
+.calc-list {
+    text-align: center; 
+    list-style-position: inside;
 }
 

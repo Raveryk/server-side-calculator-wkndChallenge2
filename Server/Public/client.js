@@ -7,7 +7,8 @@ function onReady() {
     $('#minus-btn').on('click', subNums)
     $('#multiply-btn').on('click', multiplyNums)
     $('#divide-btn').on('click', divideNums);
-    $('#clear-btn').on('click', clearInputs)
+    $('#clear-btn').on('click', clearInputs);
+    $('#clear-history').on('click', clearHistory)
 
     getCalc();
 }
@@ -86,11 +87,29 @@ function divideNums() {
     opType.push(div);
 }
 
+//function to send DELETE request to server to delete the calculation history.
+function clearHistory() {
+    $.ajax({
+        method: 'DELETE',
+        url: '/calc'
+    })
+        .then( function( response ) {
+            console.log('DELETE response from server', response);
+            $('#history').empty();
+        })
+        .catch( function( error ) {
+            console.log('Error from server', error);
+            alert('Sorry, something went wrong retreiving data from server')
+            
+        })
+        console.log('After making server DELETE request');
+}
+
 function getCalc() {
 
     $.ajax({
         method: 'GET',
-        url: '/numbers'
+        url: '/calc'
     })
         .then( function( response ) {
             console.log('Response from server', response);
@@ -104,6 +123,10 @@ function getCalc() {
         console.log('After making server request');
         
 }
+
+// function deleteOnDom( calcHistory ) {
+//     $
+// }
 
 
 function appendToDom( calcHistory ) {

@@ -31,8 +31,13 @@ app.post('/numbers', (req, res) => {
 
 })
 
-app.get('/numbers', (req, res) => {
+app.get('/calc', (req, res) => {
     res.send(calcHistory)
+})
+
+app.delete('/calc', (req, res) => {
+    res.send('DELETE HISTORY');
+    calcHistory = [];
 })
 
 
