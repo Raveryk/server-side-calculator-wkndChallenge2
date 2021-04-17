@@ -36,6 +36,7 @@ function Calculation() {
         data: newNums
     }) .then( function( response )  {
         console.log('Adding Nums');
+        getCalc();
 
         // getNums();
     }) .catch( function( error ) {
@@ -92,3 +93,15 @@ function getCalc() {
         console.log('After making server request');
         
 }
+
+
+function appendToDom( calcHistory ) {
+    $('#history').empty();
+
+    //Loop through the calcHistory
+    for( let item of calcHistory ) {
+        $('#history').append(`<ul class="calc-list"><li>
+        ${item.num1} ${item.operator} ${item.num2} = ${item.calc}
+        </li></ul>`)
+    }
+} //end appendToDom

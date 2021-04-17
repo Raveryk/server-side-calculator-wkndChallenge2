@@ -51,7 +51,7 @@ function calcNewNums() {
         }
 
     }
-    console.log(calcHistory);
+    console.log('History of Calculations: ', calcHistory);
 }
 
 
