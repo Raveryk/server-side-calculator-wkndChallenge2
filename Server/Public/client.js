@@ -59,8 +59,9 @@ function Calculation() {
 }
 
 function clearInputs() {
-    $('#num-one').val('')
-    $('#num-two').val('')
+    $('#num-one').val('');
+    $('#num-two').val('');
+    $('#solution').empty()
 }
 
 function addNums() {
@@ -96,6 +97,7 @@ function clearHistory() {
         .then( function( response ) {
             console.log('DELETE response from server', response);
             $('#history').empty();
+            $('#solution').empty();
         })
         .catch( function( error ) {
             console.log('Error from server', error);
