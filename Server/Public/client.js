@@ -97,7 +97,7 @@ function clearHistory() {
         .then( function( response ) {
             console.log('DELETE response from server', response);
             $('#history').empty();
-            $('#solution').empty();
+            
         })
         .catch( function( error ) {
             console.log('Error from server', error);
