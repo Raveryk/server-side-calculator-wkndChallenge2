@@ -17,11 +17,10 @@ let calcHistory = [];
 
 
 
+// receiving data from client and pushing it into calcHistory
 app.post('/numbers', (req, res) => {
     let newNums = req.body;
     console.log('Got new nums', newNums);
-    
-
     
     calcHistory.push(newNums);
 
@@ -31,10 +30,12 @@ app.post('/numbers', (req, res) => {
 
 })
 
+// sending back calcHistory to client
 app.get('/calc', (req, res) => {
     res.send(calcHistory)
 })
 
+// deleting calcHistory
 app.delete('/calc', (req, res) => {
     res.send('DELETE HISTORY');
     calcHistory = [];

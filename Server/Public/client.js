@@ -17,7 +17,7 @@ let opType = [];
 
 
 function Calculation() {
-    // send Numbers to the server for calc
+    // send inputs to the server for calc
     // console.log('You just calculated something!')
 
     let newNums = {
@@ -43,7 +43,7 @@ function Calculation() {
         url: '/numbers',
         data: newNums
     }) .then( function( response )  {
-        console.log('Adding Nums');
+        // console.log('Adding Nums');
         getCalc();
 
         // getNums();
@@ -58,32 +58,37 @@ function Calculation() {
 
 }
 
+
 function clearInputs() {
     $('#num-one').val('');
     $('#num-two').val('');
     $('#solution').empty()
 }
 
+// adding function
 function addNums() {
-    console.log('You are adding something')
+    // console.log('You are adding something')
     let plus = $('#add-btn').text();
     opType.push(plus);
 }
 
+// subtracting function
 function subNums() {
-    console.log('You are subtracting something');
+    // console.log('You are subtracting something');
     let minus = $('#minus-btn').text();
     opType.push(minus);
 }
 
+// multiplying function
 function multiplyNums() {
-    console.log('You are multiplying something');
+    // console.log('You are multiplying something');
     let mult = $('#multiply-btn').text();
     opType.push(mult);
 }
 
+// dividing function
 function divideNums() {
-    console.log('You are dividing something');
+    // console.log('You are dividing something');
     let div = $('#divide-btn').text();
     opType.push(div);
 }
@@ -107,6 +112,8 @@ function clearHistory() {
         console.log('After making server DELETE request');
 }
 
+
+// function to get calculations back from server
 function getCalc() {
 
     $.ajax({
@@ -126,11 +133,8 @@ function getCalc() {
         
 }
 
-// function deleteOnDom( calcHistory ) {
-//     $
-// }
 
-
+// function to append the calculation history to the DOM
 function appendToDom( calcHistory ) {
     
     $('#history').empty();
