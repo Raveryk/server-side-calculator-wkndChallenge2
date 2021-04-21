@@ -13,7 +13,6 @@ function onReady() {
     getCalc();
 }
 
-let opType = [];
 
 
 function Calculation() {
@@ -23,8 +22,7 @@ function Calculation() {
     let newNums = {
         num1: $('#num-one').val(),
         num2: $('#num-two').val(),
-        operator: opType[opType.length-1],
-        calc: ''
+        operator: selectedOperator
     }
 
     console.log(`You input: ${newNums.num1} ${newNums.operator} ${newNums.num2} `);
@@ -50,8 +48,7 @@ function Calculation() {
     }) .catch( function( error ) {
         console.log('Error from the server', error);
         alert('Sorry, we could not process your numbers');
-        // alert('Please fill out all necessary inputs.');
-        
+        // alert('Please fill out all necessary inputs.');  
     })
     
 }
@@ -65,39 +62,37 @@ function clearInputs() {
     $('#solution').empty()
 }
 
+// creating global variable to hold whatever operator is selected
+let selectedOperator;
 // adding function
 function addNums() {
     // console.log('You are adding something')
-    let plus = $('#add-btn').text();
-    opType.push(plus);
+    selectedOperator = $('#add-btn').text();
 }
 
 // subtracting function
 function subNums() {
     // console.log('You are subtracting something');
-    let minus = $('#minus-btn').text();
-    opType.push(minus);
+    selectedOperator = $('#minus-btn').text();
 }
 
 // multiplying function
 function multiplyNums() {
     // console.log('You are multiplying something');
-    let mult = $('#multiply-btn').text();
-    opType.push(mult);
+    selectedOperator = $('#multiply-btn').text();
 }
 
 // dividing function
 function divideNums() {
     // console.log('You are dividing something');
-    let div = $('#divide-btn').text();
-    opType.push(div);
+    selectedOperator = $('#divide-btn').text();
 }
 
 //function to send DELETE request to server to delete the calculation history.
 function clearHistory() {
     $.ajax({
         method: 'DELETE',
-        url: '/calc'
+        url: '/numbers'
     })
         .then( function( response ) {
             console.log('DELETE response from server', response);
@@ -106,7 +101,7 @@ function clearHistory() {
         })
         .catch( function( error ) {
             console.log('Error from server', error);
-            alert('Sorry, something went wrong retreiving data from server')
+            alert('Sorry, something went wrong retrieving data from server')
             
         })
         console.log('After making server DELETE request');
@@ -118,7 +113,7 @@ function getCalc() {
 
     $.ajax({
         method: 'GET',
-        url: '/calc'
+        url: '/numbers'
     })
         .then( function( response ) {
             console.log('Response from server', response);
@@ -126,7 +121,7 @@ function getCalc() {
         })
         .catch( function( error ) {
             console.log('Error from server', error);
-            alert('Sorry, something went wrong retreiving data from server')
+            alert('Sorry, something went wrong retrieving data from server')
             
         })
         console.log('After making server request');

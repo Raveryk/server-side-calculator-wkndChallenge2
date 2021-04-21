@@ -21,46 +21,46 @@ let calcHistory = [];
 app.post('/numbers', (req, res) => {
     let newNums = req.body;
     console.log('Got new nums', newNums);
-    
+    newNums.calc = calcAnswer(newNums);
+
     calcHistory.push(newNums);
 
-    calcNewNums(calcHistory);
     console.log(calcHistory);
     res.sendStatus(201);
 
 })
 
 // sending back calcHistory to client
-app.get('/calc', (req, res) => {
+app.get('/numbers', (req, res) => {
     res.send(calcHistory)
 })
 
 // deleting calcHistory
-app.delete('/calc', (req, res) => {
+app.delete('/numbers', (req, res) => {
     res.send('DELETE HISTORY');
     calcHistory = [];
 })
 
 
 // Setting up logic for calculations
-function calcNewNums() {
-    for ( let item of calcHistory ) {
-        if( item.operator == '+' ) {
-        item.calc = Number(item.num1) + Number(item.num2);
-        }
-        if( item.operator == '-' ) {
-        item.calc = Number(item.num1) - Number(item.num2);
-        }
-        if( item.operator == '*' ) {
-        item.calc = Number(item.num1) * Number(item.num2);
-        }
-        if( item.operator == '/' ) {
-        item.calc = Number(item.num1) / Number(item.num2);
-        }
+function calcAnswer(nums) {
+    let answer = 0;
 
+        if( nums.operator == '+' ) {
+            answer = Number(nums.num1) + Number(nums.num2);
+        }
+        if( nums.operator == '-' ) {
+            answer = Number(nums.num1) - Number(nums.num2);
+        }
+        if( nums.operator == '*' ) {
+            answer = Number(nums.num1) * Number(nums.num2);
+        }
+        if( nums.operator == '/' ) {
+            answer = Number(nums.num1) / Number(nums.num2);
+        }
+        return answer;
     }
-    console.log('History of Calculations: ', calcHistory);
-}
+
 
 
 
