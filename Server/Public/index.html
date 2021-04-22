@@ -12,38 +12,37 @@
 </head>
 <body>
     <header><h1><span id ="title">CALCULATOR</span></h1></header>
-    <section id="inputs">
-        <input id="num-one" type="number" placeholder="Number One">
-        <button id="add-btn" class="operator" type="submit">+</button>
-        <button id="minus-btn" class="operator" type="submit">-</button>
-        <button id="multiply-btn" class="operator" type="submit">*</button>
-        <button id="divide-btn" class="operator" type="submit">/</button>
-        <!-- <div></div>
-        <button class="numbers" type="button">1</button>
-        <button class="numbers" type="button">2</button>
-        <button class="numbers" type="button">3</button>
-        <button class="numbers" type="button">4</button>
-        <div></div>
-        <button class="numbers" type="button">5</button>
-        <button class="numbers" type="button">6</button>
-        <button class="numbers" type="button">7</button>
-        <button class="numbers" type="button">8</button>
-        <div></div>
-        <button class="numbers" type="button">9</button>
-        <button class="numbers" type="button">0</button>
-        <button class="numbers" type="button">.</button> -->
-        <input id="num-two" type="number" placeholder="Number Two">
-        <button id="submit-btn" class="operator" type="submit">=</button>
-        <button id="clear-btn" class="operator" type="submit">C</button>
-        <button id="clear-history" class="operator" type="submit">Clear History</button>
-        
-    </section>
-    <section id="solution-title"><h2>Solution:<span id="solution"></span></h2></section>
+    <div class="calculator">
+        <div id="calculator-display"><span id="calc-view"></span></div>
+        <section class="calculator-keys">
+            <button id="add-btn" class="operator" data-action="add">+</button>
+            <button id="minus-btn" class="operator" data-action="subtract">-</button>
+            <button id="multiply-btn" class="operator" data-action="multiply">x</button>
+            <button id="divide-btn" class="operator" data-action="divide">/</button>
+            <button id="oneNum" data-id="1">1</button>
+            <button id="twoNum" data-id="2">2</button>
+            <button id="threeNum" data-id="3">3</button>
+            <button id="fourNum" data-id="4">4</button>
+            <button id="fiveNum" data-id="5">5</button>
+            <button id="sixNum" data-id="6">6</button>
+            <button id="sevenNum" data-id="7">7</button>
+            <button id="eightNum" data-id="8">8</button>
+            <button id="nineNum" data-id="9">9</button>
+            <button id="zeroNum" data-id="0">0</button>
+            <button id="decimal" class="numbers" data-action="decimal">.</button> 
+            <!-- <input id="num-two" type="number" placeholder="Number Two"> -->
+            <button id="submit-btn" class="operator" type="submit">=</button>
+            <button id="clear-btn" class="operator">AC</button>
+            <!-- <button id="clear-history" class="operator" type="submit">Clear History</button> -->
+      
+        <!-- </section> -->
+    <!-- </div> 
+    <!-- <section id="solution-title"><h2>Solution:<span id="solution"></span></h2></section>
     <!-- <button id="clear-history" class="operator" type="submit">Clear History</button> -->
-    <div id="history-title"><u>Calculation History</u></div>
-    <section id="history">
+    <!-- <div id="history-title"><u>Calculation History</u></div>
+    <section id="history"> -->
         
-    </section>
+    <!-- </section> -->
     
 </body>
 </html>

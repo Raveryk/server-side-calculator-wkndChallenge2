@@ -20,10 +20,10 @@ let calcHistory = [];
 // receiving data from client and pushing it into calcHistory
 app.post('/numbers', (req, res) => {
     let newNums = req.body;
-    console.log('Got new nums', newNums);
-    newNums.calc = calcAnswer(newNums);
+    // console.log('Got new nums', newNums);
+    let answer = calcAnswer(newNums);
 
-    calcHistory.push(newNums);
+    calcHistory.push(answer);
 
     console.log(calcHistory);
     res.sendStatus(201);
@@ -44,21 +44,23 @@ app.delete('/numbers', (req, res) => {
 
 // Setting up logic for calculations
 function calcAnswer(nums) {
-    let answer = 0;
+    let num1 = Number(nums.num1);
+    let num2 = Number(nums.num2);
+    let answer;
 
-        if( nums.operator == '+' ) {
-            answer = Number(nums.num1) + Number(nums.num2);
-        }
-        if( nums.operator == '-' ) {
-            answer = Number(nums.num1) - Number(nums.num2);
-        }
-        if( nums.operator == '*' ) {
-            answer = Number(nums.num1) * Number(nums.num2);
-        }
-        if( nums.operator == '/' ) {
-            answer = Number(nums.num1) / Number(nums.num2);
-        }
-        return answer;
+    if (nums.operator === '+') {
+        answer = num1 + num2;
+    }
+    if (nums.operator === '-') {
+        answer = num1 - num2;
+    }
+    if (nums.operator === 'x') {
+        answer = num1 * num2;
+    }
+    if (nums.operator === '/') {
+        answer = num1 / num2;
+    }
+    return answer;
     }
 
 

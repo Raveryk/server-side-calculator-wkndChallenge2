@@ -15,6 +15,25 @@ header {
     margin-top: 3%;
 }
 
+.calculator {  
+  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  max-width: 25em;
+}
+
+#calculator-display {
+    background-color: whitesmoke;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
 #solution, #solution-title{
     margin-top: 5%;
     text-align: center;
