@@ -57,7 +57,9 @@ function onReady() {
 // 
 
 /// LEFT OFF ON 4/21/2021 /// NEED TO:
-/// - figure out how to pass numbers and operators back to server with current construction and in correct order for calculation.
+/// [ x]figure out how to pass numbers and operators back to server with current construction and in correct order for calculation.
+/// - Need to figure out how to display solution on DOM 
+/// - Add other functionalities
 /// - Connect all the other pieces!!!
 /// - Style more!!
 let num1;
